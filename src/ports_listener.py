@@ -32,10 +32,12 @@ DEFAULT_BAUDRATE = 9600
 #     'tty',
 #     'tty1',
 # ]
-DEFAULT_PORTS = [x[0] for x in serial.tools.list_ports.comports()]
 
 def get_ports():
-  return [x[0] for x in serial.tools.list_ports.comports()]
+    return [x[0] for x in serial.tools.list_ports.comports()]
+
+
+DEFAULT_PORTS = get_ports()
 
 
 def loop_start_listening():
